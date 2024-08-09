@@ -30,7 +30,7 @@ const app = Vue.createApp({
   methods: {
     attackMonster() {
       const playerAttack = getRandomVal(5, 15);
-      console.log("player attack", playerAttack);
+      // console.log("player attack", playerAttack);
       this.monsterHealth -= playerAttack;
       this.attackPlayer();
       this.clickCount++;
@@ -44,12 +44,14 @@ const app = Vue.createApp({
 
     specialAttack() {
       const specAttack = getRandomVal(8, 20);
-      console.log("player attack", specAttack);
+      // console.log("player attack", specAttack);
       this.monsterHealth -= specAttack;
     },
     healPlayer() {
       const healNumber = getRandomVal(8, 20);
-      console.log("player attack", healNumber);
+      console.log("player healed", healNumber);
+      this.clickCount++;
+      this.attackPlayer();
       if (this.playerHealth + healNumber > 100) {
         return (this.playerHealth = 100);
       }
