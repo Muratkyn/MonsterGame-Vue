@@ -67,6 +67,7 @@ const app = Vue.createApp({
       const specAttack = getRandomVal(8, 20);
       // console.log("player attack", specAttack);
       this.monsterHealth -= specAttack;
+      this.clickCount++;
     },
     healPlayer() {
       const healNumber = getRandomVal(8, 20);
